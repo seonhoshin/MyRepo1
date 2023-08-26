@@ -7,7 +7,6 @@ phases:
   build:
     commands:
       - echo Build Starting on `date`
-      - cd be-homework-controller-main
       - chmod +x ./gradlew
       - ./gradlew build
   post_build:
