@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  build:
+    commands:
+      - echo Build Starting on `date`
+      - cd be-homework-controller-main
+      - chmod +x ./gradlew
+      - ./gradlew build
+  post_build:
+    commands:
+      - echo $(basename ./be-homework-controller-main/build/libs/*.jar)
+artifacts:
+  files:
+    - be-homework-controller-main/build/libs/*.jar
+    - be-homework-controller-main/scripts/**
+    - be-homework-controller-main/appspec.yml
+  discard-paths: yes
