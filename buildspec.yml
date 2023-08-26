@@ -12,10 +12,10 @@ phases:
       - ./gradlew build
   post_build:
     commands:
-      - echo $(basename ./be-homework-controller-main/build/libs/*.jar)
+      - echo $(basename ./build/libs/*.jar)
 artifacts:
   files:
-    - be-homework-controller-main/build/libs/*.jar
-    - be-homework-controller-main/scripts/**
-    - be-homework-controller-main/appspec.yml
+    - build/libs/*.jar
+    - scripts/**
+    - appspec.yml
   discard-paths: yes
